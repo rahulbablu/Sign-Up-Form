@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div class="left-panel">
+            <img src="./background.jpg">
+            <h1><img src="./icon.png">TechFactor</h1>
+            <p>Photo by <a href="https://unsplash.com/@soberanes">@soberanes</a> on <a href="https://unsplash.com">Unsplash</a></p>
+        </div>
+        <div class="right-panel">
+            <div class="header">
+                <h3>Subscribe for FREE Tech Updates & Daily Tech News! Offer only lasts a week. So grab it as fast as you can!.<br><br>Sign up <em>now</em> to get started.</h3>
+            </div>
+                <div class="main">
+                <form action="http://httpbin.org/post" method="POST">
+                    <h2>Let's do this!</h2>
+                    <div class="form">
+                            <div>
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname" name="firstname" placeholder="Rahul" required>
+                            </div>
+                            <div>
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Kounjula">
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="abc@gmail.com" required>
+                            </div>
+                            <div>
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" required>
+                            </div>
+                            <div>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" minlength="5" maxlength="15" required>
+                            </div>
+                            <div>
+                                <label for="confirm-pass">Confirm Password</label>
+                                <input type="password" id="confirm-pass" name="confirm-pass" minlength="5" maxlength="15" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button type="submit">Create Account</button>
+                        <p>Already have an account? <a href="">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+               let confirmPass = document.getElementById("confirm-pass");
+               let password = document.getElementById("password");
+               confirmPass.addEventListener("keyup", function(event){
+                    let pass = password.value;
+                    let passConfirm = confirmPass.value;
+                    if(passConfirm !== pass){
+                        confirmPass.setCustomValidity("Password's didn't match! Try Again..")
+                      }else{
+                        confirmPass.setCustomValidity("");
+                }
+               });
+        </script>
+    </body>
+</html>
